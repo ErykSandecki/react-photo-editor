@@ -2,7 +2,7 @@
 
 Library for photo editing and exporting. Includes basic functions to manage photo position with different filters.
 
-## Instalation
+## Installation
 
 You need to install styled-components & react.
 
