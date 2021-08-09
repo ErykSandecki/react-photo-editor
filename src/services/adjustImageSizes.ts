@@ -13,31 +13,20 @@ const countSizes = (photoData: TPhotoData) => {
 
   switch (true) {
     case height === width:
-      image.height = maxSize;
-      image.width = maxSize;
-      break;
-    case height <= maxSize || width <= maxSize:
-      scaleUp(image, maxSize);
+      assignMaxSize(image, maxSize);
       break;
     default:
-      scaleDown(image, maxSize);
+      scaleImage(image, maxSize);
       break;
   }
 };
 
-const scaleUp = (image: Image, maxSize: number) => {
-  const { height, width } = image;
-
-  if (height > width) {
-    image.height *= maxSize / width;
-    image.width = maxSize;
-  } else {
-    image.height = maxSize;
-    image.width *= maxSize / height;
-  }
+const assignMaxSize = (image: Image, maxSize: number) => {
+  image.height = maxSize;
+  image.width = maxSize;
 };
 
-const scaleDown = (image: Image, maxSize: number) => {
+const scaleImage = (image: Image, maxSize: number) => {
   const { height, width } = image;
 
   if (height > width) {

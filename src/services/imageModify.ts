@@ -58,7 +58,6 @@ export const updateImage = (photoData: TPhotoData) => {
 
 export const flip = (photoData: TPhotoData, flipMode: FlipMode) => {
   photoData[flipMode] = photoData[flipMode] === 1 ? -1 : 1;
-  
   updateImage(photoData);
 };
 
