@@ -16,7 +16,7 @@ const countSizes = (photoData: TPhotoData) => {
       assignMaxSize(image, maxSize);
       break;
     default:
-      scaleImage(image, maxSize);
+      setScale(image, maxSize);
       break;
   }
 };
@@ -26,7 +26,7 @@ const assignMaxSize = (image: Image, maxSize: number) => {
   image.width = maxSize;
 };
 
-const scaleImage = (image: Image, maxSize: number) => {
+const setScale = (image: Image, maxSize: number) => {
   const { height, width } = image;
 
   if (height > width) {
